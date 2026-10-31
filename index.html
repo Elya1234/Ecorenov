@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fr" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ÉcoRénov' France - Pompe à Chaleur, Isolation, Solaire & Aides 2026</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --bg-base: #030712;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-green: #10b981;
+            --accent-green-hover: #059669;
+            --emerald-glow: rgba(16, 185, 129, 0.15);
+            --card-bg: rgba(255, 255, 255, 0.04);
+            --card-border: rgba(255, 255, 255, 0.1);
+        }
+        body { 
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+            background-color: var(--bg-base); 
+            color: var(--text-main); 
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        .glass-card { 
+            background: var(--card-bg); 
+            backdrop-filter: blur(24px); 
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid var(--card-border); 
+            border-radius: 1.5rem; 
+            padding: 2.5rem; 
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(16, 185, 129, 0.4);
+            transform: translateY(-4px);
+        }
+        .glass-nav { 
+            background: rgba(3, 7, 18, 0.9); 
+            backdrop-filter: blur(20px); 
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08); 
+            position: sticky; 
+            top: 0; 
+            z-index: 50; 
+        }
+        .container { 
+            max-width: 1100px; 
+            margin: 0 auto; 
+            padding: 2rem 1rem; 
+        }
+        .btn-conversion { 
+            background: linear-gradient(135deg, #10b981, #059669); 
+            color: #ffffff; 
+            font-weight: 800; 
+            padding: 1.15rem 2.5rem; 
+            border-radius: 1rem; 
+            text-decoration: none; 
+            display: inline-block; 
+            box-shadow: 0 15px 35px rgba(16, 185, 129, 0.4);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            text-align: center;
+        }
+        .btn-conversion:hover { 
+            transform: scale(1.02); 
+            box-shadow: 0 20px 40px rgba(16, 185, 129, 0.6); 
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #34d399, #2dd4bf, #22d3ee);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glow-sphere {
+            position: absolute;
+            border-radius: 9999px;
+            filter: blur(140px);
+            pointer-events: none;
+            z-index: 0;
+        }
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            align-items: center;
+        }
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover {
+            color: #34d399;
+        }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1.25rem;
+            border-radius: 9999px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: #34d399;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .section-space {
+            padding: 5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        iframe { 
+            width: 100%; 
+            min-height: 900px; 
+            border: none; 
+            border-radius: 1rem; 
+            background: #ffffff; 
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Arrière-plan lumineux -->
+    <div style="position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0;">
+        <div class="glow-sphere" style="top: -10rem; left: -10rem; width: 35rem; height: 35rem; background: var(--emerald-glow);"></div>
+        <div class="glow-sphere" style="top: 50%; right: -10rem; width: 35rem; height: 35rem; background: rgba(6, 182, 212, 0.08);"></div>
+    </div>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="glass-nav">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; padding-bottom: 1rem;">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <div style="width: 2.75rem; height: 2.75rem; border-radius: 0.85rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(16,185,129,0.3); display: flex; align-items: center; justify-content: center; font-size: 1.25rem;">🌱</div>
+                <span style="font-size: 1.15rem; font-weight: 800; color: white;">ÉcoRénov' <span style="color: #34d399;">France</span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#solutions">Nos Solutions</a></li>
+                <li><a href="#aides">Aides 2026</a></li>
+                <li><a href="#apropos">À propos</a></li>
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSf3fnyBet_ISJK5RSExCVfPh1MgU1194SmA0dkQTNajDqCq6g/viewform" target="_blank" style="background: #10b981; color: #030712; padding: 0.5rem 1.25rem; border-radius: 0.75rem; font-weight: 700; text-decoration: none;">Formulaire Direct</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- SECTION ACCUEIL -->
+    <section id="accueil" class="container section-space" style="text-align: center; padding-top: 6rem;">
+        <div class="badge">
+            <span style="width: 0.5rem; height: 0.5rem; border-radius: 9999px; background: #34d399; display: inline-block;"></span>
+            Barème MaPrimeRénov' & CEE 2026 Ouvert
+        </div>
+        <h1 style="font-size: clamp(2.3rem, 5vw, 4.2rem); font-weight: 800; line-height: 1.15; margin-bottom: 1.5rem;">
+            Divisez vos factures par deux grâce aux <span class="text-gradient">subventions de l'État</span>
+        </h1>
+        <p style="color: var(--text-muted); font-size: 1.125rem; max-width: 44rem; margin: 0 auto 2.5rem auto;">
+            Experts en transition énergétique : Pompe à Chaleur, Isolation thermique et Panneaux Solaires. Vérifiez vos droits aux aides cumulées.
+        </p>
+        <div>
+            <a href="#formulaire" class="btn-conversion">🚀 Lancer mon étude de dossier gratuite</a>
+        </div>
+    </section>
+
+    <!-- SECTION SOLUTIONS -->
+    <section id="solutions" class="container section-space">
+        <div style="text-align: center; margin-bottom: 3.5rem;">
+            <h2 style="font-size: 2.25rem; font-weight: 800; color: white; margin-bottom: 0.5rem;">Nos Solutions Clés en Main</h2>
+            <p style="color: var(--text-muted);">Des technologies de pointe certifiées RGE pour maximiser vos économies.</p>
+        </div>
+        
+        <div class="grid-3">
+            <div class="glass-card">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">⚡</div>
+                <h3 style="font-size: 1.35rem; font-weight: 700; color: white; margin-bottom: 0.75rem;">Pompe à Chaleur Air/Eau</h3>
+                <p style="color: #cbd5e1; font-size: 0.9rem; margin-bottom: 1.5rem;">Remplacez votre chaudière fioul/gaz. Captez les calories de l'air extérieur pour chauffer votre logement à moindre coût.</p>
+                <a href="#formulaire" style="color: #34d399; font-weight: 600; text-decoration: none; font-size: 0.9rem;">Estimer mon aide PAC &rarr;</a>
+            </div>
+
+            <div class="glass-card">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">🏠</div>
+                <h3 style="font-size: 1.35rem; font-weight: 700; color: white; margin-bottom: 0.75rem;">Isolation Thermique</h3>
+                <p style="color: #cbd5e1; font-size: 0.9rem; margin-bottom: 1.5rem;">Combles, murs et toiture : bloquez jusqu'à 30% des déperditions thermiques et gagnez en confort d'hiver comme d'été.</p>
+                <a href="#formulaire" style="color: #34d399; font-weight: 600; text-decoration: none; font-size: 0.9rem;">Estimer mon aide Isolation &rarr;</a>
+            </div>
+
+            <div class="glass-card">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">☀️</div>
+                <h3 style="font-size: 1.35rem; font-weight: 700; color: white; margin-bottom: 0.75rem;">Panneaux Solaires</h3>
+                <p style="color: #cbd5e1; font-size: 0.9rem; margin-bottom: 1.5rem;">Passez à l'autoconsommation photovoltaïque, produisez votre propre électricité verte et revendez le surplus.</p>
+                <a href="#formulaire" style="color: #34d399; font-weight: 600; text-decoration: none; font-size: 0.9rem;">Estimer mon projet Solaire &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION AIDES DE L'ÉTAT -->
+    <section id="aides" class="container section-space" style="background: rgba(15, 23, 42, 0.4); border-radius: 2rem; padding: 4rem 2rem;">
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <h2 style="font-size: 2.25rem; font-weight: 800; color: white; margin-bottom: 0.5rem;">Le Dispositif d'Aides de l'État 2026</h2>
+            <p style="color: var(--text-muted);">Comment l'État et les primes CEE financent jusqu'à 90% de vos travaux.</p>
+        </div>
+        <div class="grid-3">
+            <div class="glass-card" style="padding: 2rem;">
+                <span style="color: #34d399; font-weight: 800; font-size: 1.5rem;">01</span>
+                <h3 style="font-weight: 700; color: white; font-size: 1.15rem; margin: 0.75rem 0;">MaPrimeRénov'</h3>
+                <p style="color: #cbd5e1; font-size: 0.85rem;">Subvention directe de l'Anah calculée en fonction des revenus de votre foyer.</p>
+            </div>
+            <div class="glass-card" style="padding: 2rem;">
+                <span style="color: #34d399; font-weight: 800; font-size: 1.5rem;">02</span>
+                <h3 style="font-weight: 700; color: white; font-size: 1.15rem; margin: 0.75rem 0;">Les Primes CEE</h3>
+                <p style="color: #cbd5e1; font-size: 0.85rem;">Primes Coup de Pouce versées par les fournisseurs d'énergie pour vos équipements.</p>
+            </div>
+            <div class="glass-card" style="padding: 2rem;">
+                <span style="color: #34d399; font-weight: 800; font-size: 1.5rem;">03</span>
+                <h3 style="font-weight: 700; color: white; font-size: 1.15rem; margin: 0.75rem 0;">Éco-PTZ & TVA 5,5%</h3>
+                <p style="color: #cbd5e1; font-size: 0.85rem;">Prêt à taux zéro jusqu'à 50 000 € et TVA réduite pour votre reste à charge.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION À PROPOS -->
+    <section id="apropos" class="container section-space">
+        <div class="glass-card" style="display: flex; flex-direction: column; gap: 1.5rem; align-items: center; text-align: center; max-width: 800px; margin: 0 auto;">
+            <div style="font-size: 3rem;">🛡️</div>
+            <h2 style="font-size: 2rem; font-weight: 800; color: white;">À Propos d'ÉcoRénov' France</h2>
+            <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.7;">
+                Spécialistes de la rénovation énergétique globale, nous accompagnons chaque propriétaire de l'audit initial jusqu'au versement effectif des aides publiques. Toutes nos installations sont réalisées par des artisans partenaires qualifiés et certifiés **RGE (Reconnu Garant de l'Environnement)**, gage indispensable pour valider vos dossiers auprès de l'État.
+            </p>
+        </div>
+    </section>
+
+    <!-- SECTION FORMULAIRE (VOTRE GOOGLE FORM INTÉGRÉ PAR IFRAME + BOUTON DE SECOURS) -->
+    <section id="formulaire" class="container section-space" style="max-width: 900px;">
+        <div style="background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(30px); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 2rem; padding: 3rem; box-shadow: 0 25px 60px rgba(0,0,0,0.8); position: relative;">
+            <div style="position: absolute; top: 0; right: 0; background: #10b981; color: #030712; font-weight: 800; font-size: 0.7rem; padding: 0.5rem 1.25rem; border-bottom-left-radius: 1rem; text-transform: uppercase;">
+                Sécurisé & Officiel
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 2.5rem;">
+                <span style="color: #34d399; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 0.5rem;">Étude Personnalisée de Dossier</span>
+                <h2 style="font-size: 2rem; font-weight: 800; color: white; margin-bottom: 0.5rem;">Remplissez votre demande d'éligibilité</h2>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Après étude personnalisée de votre dossier, un conseiller expert vous contactera pour vous délivrer votre estimation chiffrée.</p>
+                
+                <!-- Bouton de secours direct si l'affichage de l'iframe est restreint par un navigateur mobile -->
+                <div style="margin-bottom: 2rem;">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSf3fnyBet_ISJK5RSExCVfPh1MgU1194SmA0dkQTNajDqCq6g/viewform" target="_blank" class="btn-conversion" style="padding: 0.75rem 1.5rem; font-size: 0.9rem;">
+                        🔗 Ouvrir le formulaire en plein écran (Optionnel si affichage bloqué)
+                    </a>
+                </div>
+            </div>
+
+            <!-- Intégration exacte de votre Google Form -->
+            <div style="background: white; border-radius: 1rem; overflow: hidden; box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf3fnyBet_ISJK5RSExCVfPh1MgU1194SmA0dkQTNajDqCq6g/viewform?embedded=true">Chargement du formulaire…</iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer style="text-align: center; padding: 3rem 1rem; color: #64748b; font-size: 0.75rem; border-top: 1px solid rgba(255,255,255,0.05); background: #030712;">
+        <p>&copy; 2026 ÉcoRénov' France. Tous droits réservés. Synchronisation instantanée avec votre Google Sheet de gestion des leads.</p>
+    </footer>
+
+</body>
+</html>
